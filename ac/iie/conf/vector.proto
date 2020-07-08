@@ -1,0 +1,122 @@
+syntax = "proto3";
+
+//生成多文件，可以将类都生成在一个文件中
+option java_multiple_files = true;
+//object-c类名前缀避免类名冲突
+//option objc_class_prefix = "NS";
+
+option java_package = "iie.grpc";
+
+option java_outer_classname = "VectorServer";
+
+service Vector {
+  rpc test(Test) returns (Test){}
+  //1.通过url批量获取vector
+  rpc search(VectorRequest) returns (VectorResponse) {}
+  //2.yolo v3实体识别接口
+  rpc getObjectsByBytes(ImageBytes) returns (LocateEntries);
+  rpc getObjectsByUrl(ImageUrl) returns (LocateEntries);
+  //3.查询向量接口，通过bytes或url
+  rpc searchByBytes(BytesRequest) returns (BytesResponse) {}
+  rpc searchByUrl(UrlRequest) returns (BytesResponse) {}
+
+  //4.向量服务提供的对外接口
+  rpc getVectorByBytes(QueryByBytesEntry) returns (ResultEntryHash){}
+  rpc getVectorByUrl(QueryByUrlEntry) returns (ResultEntryHash){}
+}
+
+message Test{
+  string name = 1;
+}
+//1.通过url批量获取vector
+message VectorRequest {
+  map<string, string> batchQuery = 1;
+}
+message MediaTask {
+  string image_url = 1;
+  string code = 2;
+  string failed = 3;
+  map<string, bytes> image_vectors = 4;//key:特征类型；value：特征向量。
+}
+message VectorResponse {
+  map<string, MediaTask> batchVector = 1;
+}
+
+//2.yolo v3 实体识别
+message ImageBytes{
+  bytes image = 1;
+}
+message ImageUrl{
+  string url = 1;
+}
+message LocateEntry{
+  sint32 x1 = 1;
+  sint32 y1 = 2;
+  sint32 x2 = 3;
+  sint32 y2 = 4;
+  sint32 x3 = 5;
+  sint32 y3 = 6;
+  sint32 x4 = 7;
+  sint32 y4 = 8;
+  string type = 9;
+  string label = 10;
+  bytes vector = 11;
+  float similarity = 12;
+}
+message LocateEntries{
+  repeated LocateEntry locates = 1;
+  string code = 2;//0：正常 -1：异常
+  sint32 w = 3;
+  sint32 h = 4;
+}
+//3.查询向量接口
+message BytesRequest {
+  sint32 x1 = 1;
+  sint32 y1 = 2;
+  sint32 x2 = 3;
+  sint32 y2 = 4;
+  sint32 x3 = 5;
+  sint32 y3 = 6;
+  sint32 x4 = 7;
+  sint32 y4 = 8;
+  bytes imageBytes = 9;
+}
+message UrlRequest {
+  sint32 x1 = 1;
+  sint32 y1 = 2;
+  sint32 x2 = 3;
+  sint32 y2 = 4;
+  sint32 x3 = 5;
+  sint32 y3 = 6;
+  sint32 x4 = 7;
+  sint32 y4 = 8;
+  string imageUrl = 9;
+}
+message BytesResponse {
+  bytes vectorBytes = 1;
+  string code = 2;
+}
+
+//4.对外接口
+message QueryByBytesEntry{
+  string space = 1;
+  int64 startTime = 2;
+  int64 endTime = 3;
+  BytesRequest image = 8;
+}
+message QueryByUrlEntry{
+  string space = 1;
+  int64 startTime = 2;
+  int64 endTime = 3;
+  UrlRequest image = 4;
+}
+message ResultEntryHash{
+  repeated ResultEntry ResultEntries = 1;
+}
+message ResultEntry{
+  string space = 1;
+  string version = 2;
+  int64 startTime = 3;
+  int64 endTime = 4;
+  bytes vector = 5;
+}
