@@ -94,7 +94,8 @@ public class GrpcClient {
                 list.addAll(v.getImageVectorsMap().values());
                 result.put(k, list);
             }else {
-                System.out.println("taks '" + k + "' url '" + v + "', request failed with code :" + v.getCode() + ", info : " + v.getFailed());
+                System.out.println("taks '" + k + "' url '" + v + "', request failed with code :" + v.getCode() + ", info : " + v.getFailed() + ", " +
+                        "engienName: " + engineName);
             }
         });
         return result;

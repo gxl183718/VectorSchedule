@@ -14,11 +14,16 @@ service Vector {
   //1.通过url批量获取vector
   rpc search(VectorRequest) returns (VectorResponse) {}
   //2.yolo v3实体识别接口
-  rpc getObjectsByBytes(ImageBytes) returns (LocateEntries);
-  rpc getObjectsByUrl(ImageUrl) returns (LocateEntries);
+  rpc getObjectsByBytes(ImageBytes) returns (LocateEntries) {}
+  rpc getObjectsByUrl(ImageUrl) returns (LocateEntries) {}
+      //新增批量接口
+  rpc mGetObjectsByUrl(MImageUrl) returns (MLocateEntries) {}
+
   //3.查询向量接口，通过bytes或url
   rpc searchByBytes(BytesRequest) returns (BytesResponse) {}
   rpc searchByUrl(UrlRequest) returns (BytesResponse) {}
+      //新增批量接口
+  rpc mSearchByUrl(MUrlRequest) returns (MBytesResponse) {}
 
   //4.向量服务提供的对外接口
   rpc getVectorByBytes(QueryByBytesEntry) returns (ResultEntryHash){}
@@ -49,6 +54,10 @@ message ImageBytes{
 message ImageUrl{
   string url = 1;
 }
+//新增批量发送接口
+message MImageUrl{
+  repeated string urls = 1;
+}
 message LocateEntry{
   sint32 x1 = 1;
   sint32 y1 = 2;
@@ -65,9 +74,14 @@ message LocateEntry{
 }
 message LocateEntries{
   repeated LocateEntry locates = 1;
-  string code = 2;//0：正常 -1：异常
+  string code = 2;//0：没有特征 -1：异常 1：正常
   sint32 w = 3;
   sint32 h = 4;
+}
+//新增批量返回
+message MLocateEntries{
+  //key-url,value-locateEntries
+  map<string, LocateEntries> locatesMap = 1;
 }
 //3.查询向量接口
 message BytesRequest {
@@ -92,9 +106,19 @@ message UrlRequest {
   sint32 y4 = 8;
   string imageUrl = 9;
 }
+//新增批量请求接口
+message MUrlRequest{
+  //key-id,value-urlRequest
+  map<string, UrlRequest> UrlRequestMap = 1;
+}
 message BytesResponse {
   bytes vectorBytes = 1;
   string code = 2;
+}
+//新增批量返回接口
+message MBytesResponse {
+ //key-id,value-bytesResponse
+  map<string, BytesResponse> BytesResponseMap = 1;
 }
 
 //4.对外接口
