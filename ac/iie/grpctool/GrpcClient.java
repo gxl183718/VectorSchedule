@@ -104,14 +104,6 @@ public class GrpcClient {
         return blockingStub.search(vectorRequest);
     }
 
-    public List<ByteString> searchByBytes(byte[] image) {
-        BytesResponse response = blockingStub.searchByBytes(BytesRequest.newBuilder().setImageBytes(ByteString.copyFrom(image)).build());
-        List<ByteString> list = new ArrayList<>();
-        for (ByteString value : response.getVectorBytesMap().values()) {
-            list.add(value);
-        }
-        return list;
-    }
     public BytesResponse searchByBytes(BytesRequest bytesRequest) {
         return blockingStub.searchByBytes(bytesRequest);
     }
