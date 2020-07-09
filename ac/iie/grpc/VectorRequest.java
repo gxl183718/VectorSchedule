@@ -5,8 +5,7 @@ package cn.ac.iie.grpc;
 
 /**
  * <pre>
- *1.客户端请求参数
- * key:任务id；value：图片url。
+ *1.通过url批量获取vector
  * </pre>
  *
  * Protobuf type {@code VectorRequest}
@@ -348,8 +347,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *1.客户端请求参数
-   * key:任务id；value：图片url。
+   *1.通过url批量获取vector
    * </pre>
    *
    * Protobuf type {@code VectorRequest}

@@ -5,6 +5,7 @@ package cn.ac.iie.grpc;
 
 /**
  * <pre>
+ *3.查询向量接口
  * </pre>
  *
  * Protobuf type {@code BytesRequest}
@@ -46,7 +47,47 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
+          case 8: {
+
+            x1_ = input.readSInt32();
+            break;
+          }
+          case 16: {
+
+            y1_ = input.readSInt32();
+            break;
+          }
+          case 24: {
+
+            x2_ = input.readSInt32();
+            break;
+          }
+          case 32: {
+
+            y2_ = input.readSInt32();
+            break;
+          }
+          case 40: {
+
+            x3_ = input.readSInt32();
+            break;
+          }
+          case 48: {
+
+            y3_ = input.readSInt32();
+            break;
+          }
+          case 56: {
+
+            x4_ = input.readSInt32();
+            break;
+          }
+          case 64: {
+
+            y4_ = input.readSInt32();
+            break;
+          }
+          case 74: {
 
             imageBytes_ = input.readBytes();
             break;
@@ -83,10 +124,82 @@ private static final long serialVersionUID = 0L;
             cn.ac.iie.grpc.BytesRequest.class, cn.ac.iie.grpc.BytesRequest.Builder.class);
   }
 
-  public static final int IMAGEBYTES_FIELD_NUMBER = 1;
+  public static final int X1_FIELD_NUMBER = 1;
+  private int x1_;
+  /**
+   * <code>sint32 x1 = 1;</code>
+   */
+  public int getX1() {
+    return x1_;
+  }
+
+  public static final int Y1_FIELD_NUMBER = 2;
+  private int y1_;
+  /**
+   * <code>sint32 y1 = 2;</code>
+   */
+  public int getY1() {
+    return y1_;
+  }
+
+  public static final int X2_FIELD_NUMBER = 3;
+  private int x2_;
+  /**
+   * <code>sint32 x2 = 3;</code>
+   */
+  public int getX2() {
+    return x2_;
+  }
+
+  public static final int Y2_FIELD_NUMBER = 4;
+  private int y2_;
+  /**
+   * <code>sint32 y2 = 4;</code>
+   */
+  public int getY2() {
+    return y2_;
+  }
+
+  public static final int X3_FIELD_NUMBER = 5;
+  private int x3_;
+  /**
+   * <code>sint32 x3 = 5;</code>
+   */
+  public int getX3() {
+    return x3_;
+  }
+
+  public static final int Y3_FIELD_NUMBER = 6;
+  private int y3_;
+  /**
+   * <code>sint32 y3 = 6;</code>
+   */
+  public int getY3() {
+    return y3_;
+  }
+
+  public static final int X4_FIELD_NUMBER = 7;
+  private int x4_;
+  /**
+   * <code>sint32 x4 = 7;</code>
+   */
+  public int getX4() {
+    return x4_;
+  }
+
+  public static final int Y4_FIELD_NUMBER = 8;
+  private int y4_;
+  /**
+   * <code>sint32 y4 = 8;</code>
+   */
+  public int getY4() {
+    return y4_;
+  }
+
+  public static final int IMAGEBYTES_FIELD_NUMBER = 9;
   private com.google.protobuf.ByteString imageBytes_;
   /**
-   * <code>bytes imageBytes = 1;</code>
+   * <code>bytes imageBytes = 9;</code>
    */
   public com.google.protobuf.ByteString getImageBytes() {
     return imageBytes_;
@@ -106,8 +219,32 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (x1_ != 0) {
+      output.writeSInt32(1, x1_);
+    }
+    if (y1_ != 0) {
+      output.writeSInt32(2, y1_);
+    }
+    if (x2_ != 0) {
+      output.writeSInt32(3, x2_);
+    }
+    if (y2_ != 0) {
+      output.writeSInt32(4, y2_);
+    }
+    if (x3_ != 0) {
+      output.writeSInt32(5, x3_);
+    }
+    if (y3_ != 0) {
+      output.writeSInt32(6, y3_);
+    }
+    if (x4_ != 0) {
+      output.writeSInt32(7, x4_);
+    }
+    if (y4_ != 0) {
+      output.writeSInt32(8, y4_);
+    }
     if (!imageBytes_.isEmpty()) {
-      output.writeBytes(1, imageBytes_);
+      output.writeBytes(9, imageBytes_);
     }
     unknownFields.writeTo(output);
   }
@@ -118,9 +255,41 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (x1_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeSInt32Size(1, x1_);
+    }
+    if (y1_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeSInt32Size(2, y1_);
+    }
+    if (x2_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeSInt32Size(3, x2_);
+    }
+    if (y2_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeSInt32Size(4, y2_);
+    }
+    if (x3_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeSInt32Size(5, x3_);
+    }
+    if (y3_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeSInt32Size(6, y3_);
+    }
+    if (x4_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeSInt32Size(7, x4_);
+    }
+    if (y4_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeSInt32Size(8, y4_);
+    }
     if (!imageBytes_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(1, imageBytes_);
+        .computeBytesSize(9, imageBytes_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -137,6 +306,22 @@ private static final long serialVersionUID = 0L;
     }
     cn.ac.iie.grpc.BytesRequest other = (cn.ac.iie.grpc.BytesRequest) obj;
 
+    if (getX1()
+        != other.getX1()) return false;
+    if (getY1()
+        != other.getY1()) return false;
+    if (getX2()
+        != other.getX2()) return false;
+    if (getY2()
+        != other.getY2()) return false;
+    if (getX3()
+        != other.getX3()) return false;
+    if (getY3()
+        != other.getY3()) return false;
+    if (getX4()
+        != other.getX4()) return false;
+    if (getY4()
+        != other.getY4()) return false;
     if (!getImageBytes()
         .equals(other.getImageBytes())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -150,6 +335,22 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + X1_FIELD_NUMBER;
+    hash = (53 * hash) + getX1();
+    hash = (37 * hash) + Y1_FIELD_NUMBER;
+    hash = (53 * hash) + getY1();
+    hash = (37 * hash) + X2_FIELD_NUMBER;
+    hash = (53 * hash) + getX2();
+    hash = (37 * hash) + Y2_FIELD_NUMBER;
+    hash = (53 * hash) + getY2();
+    hash = (37 * hash) + X3_FIELD_NUMBER;
+    hash = (53 * hash) + getX3();
+    hash = (37 * hash) + Y3_FIELD_NUMBER;
+    hash = (53 * hash) + getY3();
+    hash = (37 * hash) + X4_FIELD_NUMBER;
+    hash = (53 * hash) + getX4();
+    hash = (37 * hash) + Y4_FIELD_NUMBER;
+    hash = (53 * hash) + getY4();
     hash = (37 * hash) + IMAGEBYTES_FIELD_NUMBER;
     hash = (53 * hash) + getImageBytes().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -249,6 +450,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   *3.查询向量接口
    * </pre>
    *
    * Protobuf type {@code BytesRequest}
@@ -288,6 +490,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      x1_ = 0;
+
+      y1_ = 0;
+
+      x2_ = 0;
+
+      y2_ = 0;
+
+      x3_ = 0;
+
+      y3_ = 0;
+
+      x4_ = 0;
+
+      y4_ = 0;
+
       imageBytes_ = com.google.protobuf.ByteString.EMPTY;
 
       return this;
@@ -316,6 +534,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public cn.ac.iie.grpc.BytesRequest buildPartial() {
       cn.ac.iie.grpc.BytesRequest result = new cn.ac.iie.grpc.BytesRequest(this);
+      result.x1_ = x1_;
+      result.y1_ = y1_;
+      result.x2_ = x2_;
+      result.y2_ = y2_;
+      result.x3_ = x3_;
+      result.y3_ = y3_;
+      result.x4_ = x4_;
+      result.y4_ = y4_;
       result.imageBytes_ = imageBytes_;
       onBuilt();
       return result;
@@ -365,6 +591,30 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(cn.ac.iie.grpc.BytesRequest other) {
       if (other == cn.ac.iie.grpc.BytesRequest.getDefaultInstance()) return this;
+      if (other.getX1() != 0) {
+        setX1(other.getX1());
+      }
+      if (other.getY1() != 0) {
+        setY1(other.getY1());
+      }
+      if (other.getX2() != 0) {
+        setX2(other.getX2());
+      }
+      if (other.getY2() != 0) {
+        setY2(other.getY2());
+      }
+      if (other.getX3() != 0) {
+        setX3(other.getX3());
+      }
+      if (other.getY3() != 0) {
+        setY3(other.getY3());
+      }
+      if (other.getX4() != 0) {
+        setX4(other.getX4());
+      }
+      if (other.getY4() != 0) {
+        setY4(other.getY4());
+      }
       if (other.getImageBytes() != com.google.protobuf.ByteString.EMPTY) {
         setImageBytes(other.getImageBytes());
       }
@@ -397,15 +647,223 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int x1_ ;
+    /**
+     * <code>sint32 x1 = 1;</code>
+     */
+    public int getX1() {
+      return x1_;
+    }
+    /**
+     * <code>sint32 x1 = 1;</code>
+     */
+    public Builder setX1(int value) {
+      
+      x1_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>sint32 x1 = 1;</code>
+     */
+    public Builder clearX1() {
+      
+      x1_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int y1_ ;
+    /**
+     * <code>sint32 y1 = 2;</code>
+     */
+    public int getY1() {
+      return y1_;
+    }
+    /**
+     * <code>sint32 y1 = 2;</code>
+     */
+    public Builder setY1(int value) {
+      
+      y1_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>sint32 y1 = 2;</code>
+     */
+    public Builder clearY1() {
+      
+      y1_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int x2_ ;
+    /**
+     * <code>sint32 x2 = 3;</code>
+     */
+    public int getX2() {
+      return x2_;
+    }
+    /**
+     * <code>sint32 x2 = 3;</code>
+     */
+    public Builder setX2(int value) {
+      
+      x2_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>sint32 x2 = 3;</code>
+     */
+    public Builder clearX2() {
+      
+      x2_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int y2_ ;
+    /**
+     * <code>sint32 y2 = 4;</code>
+     */
+    public int getY2() {
+      return y2_;
+    }
+    /**
+     * <code>sint32 y2 = 4;</code>
+     */
+    public Builder setY2(int value) {
+      
+      y2_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>sint32 y2 = 4;</code>
+     */
+    public Builder clearY2() {
+      
+      y2_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int x3_ ;
+    /**
+     * <code>sint32 x3 = 5;</code>
+     */
+    public int getX3() {
+      return x3_;
+    }
+    /**
+     * <code>sint32 x3 = 5;</code>
+     */
+    public Builder setX3(int value) {
+      
+      x3_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>sint32 x3 = 5;</code>
+     */
+    public Builder clearX3() {
+      
+      x3_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int y3_ ;
+    /**
+     * <code>sint32 y3 = 6;</code>
+     */
+    public int getY3() {
+      return y3_;
+    }
+    /**
+     * <code>sint32 y3 = 6;</code>
+     */
+    public Builder setY3(int value) {
+      
+      y3_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>sint32 y3 = 6;</code>
+     */
+    public Builder clearY3() {
+      
+      y3_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int x4_ ;
+    /**
+     * <code>sint32 x4 = 7;</code>
+     */
+    public int getX4() {
+      return x4_;
+    }
+    /**
+     * <code>sint32 x4 = 7;</code>
+     */
+    public Builder setX4(int value) {
+      
+      x4_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>sint32 x4 = 7;</code>
+     */
+    public Builder clearX4() {
+      
+      x4_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int y4_ ;
+    /**
+     * <code>sint32 y4 = 8;</code>
+     */
+    public int getY4() {
+      return y4_;
+    }
+    /**
+     * <code>sint32 y4 = 8;</code>
+     */
+    public Builder setY4(int value) {
+      
+      y4_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>sint32 y4 = 8;</code>
+     */
+    public Builder clearY4() {
+      
+      y4_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.ByteString imageBytes_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes imageBytes = 1;</code>
+     * <code>bytes imageBytes = 9;</code>
      */
     public com.google.protobuf.ByteString getImageBytes() {
       return imageBytes_;
     }
     /**
-     * <code>bytes imageBytes = 1;</code>
+     * <code>bytes imageBytes = 9;</code>
      */
     public Builder setImageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -417,7 +875,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes imageBytes = 1;</code>
+     * <code>bytes imageBytes = 9;</code>
      */
     public Builder clearImageBytes() {
       

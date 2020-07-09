@@ -15,20 +15,10 @@ public final class VectorServer {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_BytesRequest_descriptor;
+    internal_static_Test_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_BytesRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_BytesResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_BytesResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_BytesResponse_VectorBytesEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_BytesResponse_VectorBytesEntry_fieldAccessorTable;
+      internal_static_Test_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_VectorRequest_descriptor;
   static final 
@@ -59,6 +49,96 @@ public final class VectorServer {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_VectorResponse_BatchVectorEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ImageBytes_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ImageBytes_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ImageUrl_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ImageUrl_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_MImageUrl_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_MImageUrl_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_LocateEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_LocateEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_LocateEntries_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_LocateEntries_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_MLocateEntries_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_MLocateEntries_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_MLocateEntries_LocatesMapEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_MLocateEntries_LocatesMapEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_BytesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_BytesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UrlRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UrlRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_MUrlRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_MUrlRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_MUrlRequest_UrlRequestMapEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_MUrlRequest_UrlRequestMapEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_BytesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_BytesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_MBytesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_MBytesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_MBytesResponse_BytesResponseMapEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_MBytesResponse_BytesResponseMapEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_QueryByBytesEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_QueryByBytesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_QueryByUrlEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_QueryByUrlEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ResultEntryHash_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ResultEntryHash_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ResultEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ResultEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -68,24 +148,66 @@ public final class VectorServer {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014vector.proto\"\"\n\014BytesRequest\022\022\n\nimageB" +
-      "ytes\030\001 \001(\014\"\207\001\n\rBytesResponse\0224\n\013vectorBy" +
-      "tes\030\001 \003(\0132\037.BytesResponse.VectorBytesEnt" +
-      "ry\022\014\n\004code\030\002 \001(\t\0322\n\020VectorBytesEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"v\n\rVectorRe" +
-      "quest\0222\n\nbatchQuery\030\001 \003(\0132\036.VectorReques" +
-      "t.BatchQueryEntry\0321\n\017BatchQueryEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\246\001\n\tMediaTa" +
-      "sk\022\021\n\timage_url\030\001 \001(\t\022\014\n\004code\030\002 \001(\t\022\016\n\006f" +
-      "ailed\030\003 \001(\t\0223\n\rimage_vectors\030\004 \003(\0132\034.Med" +
-      "iaTask.ImageVectorsEntry\0323\n\021ImageVectors" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"\207\001" +
-      "\n\016VectorResponse\0225\n\013batchVector\030\001 \003(\0132 ." +
-      "VectorResponse.BatchVectorEntry\032>\n\020Batch" +
-      "VectorEntry\022\013\n\003key\030\001 \001(\t\022\031\n\005value\030\002 \001(\0132" +
-      "\n.MediaTask:\0028\0012g\n\006Vector\022+\n\006search\022\016.Ve" +
-      "ctorRequest\032\017.VectorResponse\"\000\0220\n\rsearch" +
-      "ByBytes\022\r.BytesRequest\032\016.BytesResponse\"\000" +
+      "\n\014vector.proto\"\024\n\004Test\022\014\n\004name\030\001 \001(\t\"v\n\r" +
+      "VectorRequest\0222\n\nbatchQuery\030\001 \003(\0132\036.Vect" +
+      "orRequest.BatchQueryEntry\0321\n\017BatchQueryE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\246\001\n" +
+      "\tMediaTask\022\021\n\timage_url\030\001 \001(\t\022\014\n\004code\030\002 " +
+      "\001(\t\022\016\n\006failed\030\003 \001(\t\0223\n\rimage_vectors\030\004 \003" +
+      "(\0132\034.MediaTask.ImageVectorsEntry\0323\n\021Imag" +
+      "eVectorsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
+      "\014:\0028\001\"\207\001\n\016VectorResponse\0225\n\013batchVector\030" +
+      "\001 \003(\0132 .VectorResponse.BatchVectorEntry\032" +
+      ">\n\020BatchVectorEntry\022\013\n\003key\030\001 \001(\t\022\031\n\005valu" +
+      "e\030\002 \001(\0132\n.MediaTask:\0028\001\"\033\n\nImageBytes\022\r\n" +
+      "\005image\030\001 \001(\014\"\027\n\010ImageUrl\022\013\n\003url\030\001 \001(\t\"\031\n" +
+      "\tMImageUrl\022\014\n\004urls\030\001 \003(\t\"\256\001\n\013LocateEntry" +
+      "\022\n\n\002x1\030\001 \001(\021\022\n\n\002y1\030\002 \001(\021\022\n\n\002x2\030\003 \001(\021\022\n\n\002" +
+      "y2\030\004 \001(\021\022\n\n\002x3\030\005 \001(\021\022\n\n\002y3\030\006 \001(\021\022\n\n\002x4\030\007" +
+      " \001(\021\022\n\n\002y4\030\010 \001(\021\022\014\n\004type\030\t \001(\t\022\r\n\005label\030" +
+      "\n \001(\t\022\016\n\006vector\030\013 \001(\014\022\022\n\nsimilarity\030\014 \001(" +
+      "\002\"R\n\rLocateEntries\022\035\n\007locates\030\001 \003(\0132\014.Lo" +
+      "cateEntry\022\014\n\004code\030\002 \001(\t\022\t\n\001w\030\003 \001(\021\022\t\n\001h\030" +
+      "\004 \001(\021\"\210\001\n\016MLocateEntries\0223\n\nlocatesMap\030\001" +
+      " \003(\0132\037.MLocateEntries.LocatesMapEntry\032A\n" +
+      "\017LocatesMapEntry\022\013\n\003key\030\001 \001(\t\022\035\n\005value\030\002" +
+      " \001(\0132\016.LocateEntries:\0028\001\"\202\001\n\014BytesReques" +
+      "t\022\n\n\002x1\030\001 \001(\021\022\n\n\002y1\030\002 \001(\021\022\n\n\002x2\030\003 \001(\021\022\n\n" +
+      "\002y2\030\004 \001(\021\022\n\n\002x3\030\005 \001(\021\022\n\n\002y3\030\006 \001(\021\022\n\n\002x4\030" +
+      "\007 \001(\021\022\n\n\002y4\030\010 \001(\021\022\022\n\nimageBytes\030\t \001(\014\"~\n" +
+      "\nUrlRequest\022\n\n\002x1\030\001 \001(\021\022\n\n\002y1\030\002 \001(\021\022\n\n\002x" +
+      "2\030\003 \001(\021\022\n\n\002y2\030\004 \001(\021\022\n\n\002x3\030\005 \001(\021\022\n\n\002y3\030\006 " +
+      "\001(\021\022\n\n\002x4\030\007 \001(\021\022\n\n\002y4\030\010 \001(\021\022\020\n\010imageUrl\030" +
+      "\t \001(\t\"\210\001\n\013MUrlRequest\0226\n\rUrlRequestMap\030\001" +
+      " \003(\0132\037.MUrlRequest.UrlRequestMapEntry\032A\n" +
+      "\022UrlRequestMapEntry\022\013\n\003key\030\001 \001(\t\022\032\n\005valu" +
+      "e\030\002 \001(\0132\013.UrlRequest:\0028\001\"2\n\rBytesRespons" +
+      "e\022\023\n\013vectorBytes\030\001 \001(\014\022\014\n\004code\030\002 \001(\t\"\232\001\n" +
+      "\016MBytesResponse\022?\n\020BytesResponseMap\030\001 \003(" +
+      "\0132%.MBytesResponse.BytesResponseMapEntry" +
+      "\032G\n\025BytesResponseMapEntry\022\013\n\003key\030\001 \001(\t\022\035" +
+      "\n\005value\030\002 \001(\0132\016.BytesResponse:\0028\001\"d\n\021Que" +
+      "ryByBytesEntry\022\r\n\005space\030\001 \001(\t\022\021\n\tstartTi" +
+      "me\030\002 \001(\003\022\017\n\007endTime\030\003 \001(\003\022\034\n\005image\030\010 \001(\013" +
+      "2\r.BytesRequest\"`\n\017QueryByUrlEntry\022\r\n\005sp" +
+      "ace\030\001 \001(\t\022\021\n\tstartTime\030\002 \001(\003\022\017\n\007endTime\030" +
+      "\003 \001(\003\022\032\n\005image\030\004 \001(\0132\013.UrlRequest\"6\n\017Res" +
+      "ultEntryHash\022#\n\rResultEntries\030\001 \003(\0132\014.Re" +
+      "sultEntry\"a\n\013ResultEntry\022\r\n\005space\030\001 \001(\t\022" +
+      "\017\n\007version\030\002 \001(\t\022\021\n\tstartTime\030\003 \001(\003\022\017\n\007e" +
+      "ndTime\030\004 \001(\003\022\016\n\006vector\030\005 \001(\0142\351\003\n\006Vector\022" +
+      "\026\n\004test\022\005.Test\032\005.Test\"\000\022+\n\006search\022\016.Vect" +
+      "orRequest\032\017.VectorResponse\"\000\0222\n\021getObjec" +
+      "tsByBytes\022\013.ImageBytes\032\016.LocateEntries\"\000" +
+      "\022.\n\017getObjectsByUrl\022\t.ImageUrl\032\016.LocateE" +
+      "ntries\"\000\0221\n\020mGetObjectsByUrl\022\n.MImageUrl" +
+      "\032\017.MLocateEntries\"\000\0220\n\rsearchByBytes\022\r.B" +
+      "ytesRequest\032\016.BytesResponse\"\000\022,\n\013searchB" +
+      "yUrl\022\013.UrlRequest\032\016.BytesResponse\"\000\022/\n\014m" +
+      "SearchByUrl\022\014.MUrlRequest\032\017.MBytesRespon" +
+      "se\"\000\022:\n\020getVectorByBytes\022\022.QueryByBytesE" +
+      "ntry\032\020.ResultEntryHash\"\000\0226\n\016getVectorByU" +
+      "rl\022\020.QueryByUrlEntry\032\020.ResultEntryHash\"\000" +
       "B \n\016cn.ac.iie.grpcB\014VectorServerP\001b\006prot" +
       "o3"
     };
@@ -101,26 +223,14 @@ public final class VectorServer {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_BytesRequest_descriptor =
+    internal_static_Test_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_BytesRequest_fieldAccessorTable = new
+    internal_static_Test_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_BytesRequest_descriptor,
-        new java.lang.String[] { "ImageBytes", });
-    internal_static_BytesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_BytesResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_BytesResponse_descriptor,
-        new java.lang.String[] { "VectorBytes", "Code", });
-    internal_static_BytesResponse_VectorBytesEntry_descriptor =
-      internal_static_BytesResponse_descriptor.getNestedTypes().get(0);
-    internal_static_BytesResponse_VectorBytesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_BytesResponse_VectorBytesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        internal_static_Test_descriptor,
+        new java.lang.String[] { "Name", });
     internal_static_VectorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_VectorRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VectorRequest_descriptor,
@@ -132,7 +242,7 @@ public final class VectorServer {
         internal_static_VectorRequest_BatchQueryEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_MediaTask_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_MediaTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MediaTask_descriptor,
@@ -144,7 +254,7 @@ public final class VectorServer {
         internal_static_MediaTask_ImageVectorsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_VectorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_VectorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VectorResponse_descriptor,
@@ -155,6 +265,114 @@ public final class VectorServer {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VectorResponse_BatchVectorEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_ImageBytes_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_ImageBytes_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ImageBytes_descriptor,
+        new java.lang.String[] { "Image", });
+    internal_static_ImageUrl_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_ImageUrl_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ImageUrl_descriptor,
+        new java.lang.String[] { "Url", });
+    internal_static_MImageUrl_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_MImageUrl_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_MImageUrl_descriptor,
+        new java.lang.String[] { "Urls", });
+    internal_static_LocateEntry_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_LocateEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_LocateEntry_descriptor,
+        new java.lang.String[] { "X1", "Y1", "X2", "Y2", "X3", "Y3", "X4", "Y4", "Type", "Label", "Vector", "Similarity", });
+    internal_static_LocateEntries_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_LocateEntries_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_LocateEntries_descriptor,
+        new java.lang.String[] { "Locates", "Code", "W", "H", });
+    internal_static_MLocateEntries_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_MLocateEntries_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_MLocateEntries_descriptor,
+        new java.lang.String[] { "LocatesMap", });
+    internal_static_MLocateEntries_LocatesMapEntry_descriptor =
+      internal_static_MLocateEntries_descriptor.getNestedTypes().get(0);
+    internal_static_MLocateEntries_LocatesMapEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_MLocateEntries_LocatesMapEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_BytesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_BytesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_BytesRequest_descriptor,
+        new java.lang.String[] { "X1", "Y1", "X2", "Y2", "X3", "Y3", "X4", "Y4", "ImageBytes", });
+    internal_static_UrlRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_UrlRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UrlRequest_descriptor,
+        new java.lang.String[] { "X1", "Y1", "X2", "Y2", "X3", "Y3", "X4", "Y4", "ImageUrl", });
+    internal_static_MUrlRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_MUrlRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_MUrlRequest_descriptor,
+        new java.lang.String[] { "UrlRequestMap", });
+    internal_static_MUrlRequest_UrlRequestMapEntry_descriptor =
+      internal_static_MUrlRequest_descriptor.getNestedTypes().get(0);
+    internal_static_MUrlRequest_UrlRequestMapEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_MUrlRequest_UrlRequestMapEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_BytesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_BytesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_BytesResponse_descriptor,
+        new java.lang.String[] { "VectorBytes", "Code", });
+    internal_static_MBytesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_MBytesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_MBytesResponse_descriptor,
+        new java.lang.String[] { "BytesResponseMap", });
+    internal_static_MBytesResponse_BytesResponseMapEntry_descriptor =
+      internal_static_MBytesResponse_descriptor.getNestedTypes().get(0);
+    internal_static_MBytesResponse_BytesResponseMapEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_MBytesResponse_BytesResponseMapEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_QueryByBytesEntry_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_QueryByBytesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_QueryByBytesEntry_descriptor,
+        new java.lang.String[] { "Space", "StartTime", "EndTime", "Image", });
+    internal_static_QueryByUrlEntry_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_QueryByUrlEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_QueryByUrlEntry_descriptor,
+        new java.lang.String[] { "Space", "StartTime", "EndTime", "Image", });
+    internal_static_ResultEntryHash_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_ResultEntryHash_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ResultEntryHash_descriptor,
+        new java.lang.String[] { "ResultEntries", });
+    internal_static_ResultEntry_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_ResultEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ResultEntry_descriptor,
+        new java.lang.String[] { "Space", "Version", "StartTime", "EndTime", "Vector", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

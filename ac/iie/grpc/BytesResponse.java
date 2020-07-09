@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private BytesResponse() {
+    vectorBytes_ = com.google.protobuf.ByteString.EMPTY;
     code_ = "";
   }
 
@@ -44,16 +45,8 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              vectorBytes_ = com.google.protobuf.MapField.newMapField(
-                  VectorBytesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000001;
-            }
-            com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
-            vectorBytes__ = input.readMessage(
-                VectorBytesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            vectorBytes_.getMutableMap().put(
-                vectorBytes__.getKey(), vectorBytes__.getValue());
+
+            vectorBytes_ = input.readBytes();
             break;
           }
           case 18: {
@@ -86,18 +79,6 @@ private static final long serialVersionUID = 0L;
     return cn.ac.iie.grpc.VectorServer.internal_static_BytesResponse_descriptor;
   }
 
-  @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
-    switch (number) {
-      case 1:
-        return internalGetVectorBytes();
-      default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
-    }
-  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -106,81 +87,13 @@ private static final long serialVersionUID = 0L;
             cn.ac.iie.grpc.BytesResponse.class, cn.ac.iie.grpc.BytesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int VECTORBYTES_FIELD_NUMBER = 1;
-  private static final class VectorBytesDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, com.google.protobuf.ByteString> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, com.google.protobuf.ByteString>newDefaultInstance(
-                cn.ac.iie.grpc.VectorServer.internal_static_BytesResponse_VectorBytesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.BYTES,
-                com.google.protobuf.ByteString.EMPTY);
-  }
-  private com.google.protobuf.MapField<
-      java.lang.String, com.google.protobuf.ByteString> vectorBytes_;
-  private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
-  internalGetVectorBytes() {
-    if (vectorBytes_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          VectorBytesDefaultEntryHolder.defaultEntry);
-    }
+  private com.google.protobuf.ByteString vectorBytes_;
+  /**
+   * <code>bytes vectorBytes = 1;</code>
+   */
+  public com.google.protobuf.ByteString getVectorBytes() {
     return vectorBytes_;
-  }
-
-  public int getVectorBytesCount() {
-    return internalGetVectorBytes().getMap().size();
-  }
-  /**
-   * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-   */
-
-  public boolean containsVectorBytes(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    return internalGetVectorBytes().getMap().containsKey(key);
-  }
-  /**
-   * Use {@link #getVectorBytesMap()} instead.
-   */
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getVectorBytes() {
-    return getVectorBytesMap();
-  }
-  /**
-   * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-   */
-
-  public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getVectorBytesMap() {
-    return internalGetVectorBytes().getMap();
-  }
-  /**
-   * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-   */
-
-  public com.google.protobuf.ByteString getVectorBytesOrDefault(
-      java.lang.String key,
-      com.google.protobuf.ByteString defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
-        internalGetVectorBytes().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-   */
-
-  public com.google.protobuf.ByteString getVectorBytesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
-        internalGetVectorBytes().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
   }
 
   public static final int CODE_FIELD_NUMBER = 2;
@@ -231,12 +144,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetVectorBytes(),
-        VectorBytesDefaultEntryHolder.defaultEntry,
-        1);
+    if (!vectorBytes_.isEmpty()) {
+      output.writeBytes(1, vectorBytes_);
+    }
     if (!getCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, code_);
     }
@@ -249,15 +159,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
-         : internalGetVectorBytes().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
-      vectorBytes__ = VectorBytesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
+    if (!vectorBytes_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, vectorBytes__);
+        .computeBytesSize(1, vectorBytes_);
     }
     if (!getCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, code_);
@@ -277,8 +181,8 @@ private static final long serialVersionUID = 0L;
     }
     cn.ac.iie.grpc.BytesResponse other = (cn.ac.iie.grpc.BytesResponse) obj;
 
-    if (!internalGetVectorBytes().equals(
-        other.internalGetVectorBytes())) return false;
+    if (!getVectorBytes()
+        .equals(other.getVectorBytes())) return false;
     if (!getCode()
         .equals(other.getCode())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -292,10 +196,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (!internalGetVectorBytes().getMap().isEmpty()) {
-      hash = (37 * hash) + VECTORBYTES_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetVectorBytes().hashCode();
-    }
+    hash = (37 * hash) + VECTORBYTES_FIELD_NUMBER;
+    hash = (53 * hash) + getVectorBytes().hashCode();
     hash = (37 * hash) + CODE_FIELD_NUMBER;
     hash = (53 * hash) + getCode().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -405,28 +307,6 @@ private static final long serialVersionUID = 0L;
       return cn.ac.iie.grpc.VectorServer.internal_static_BytesResponse_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetVectorBytes();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetMutableVectorBytes();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -453,7 +333,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      internalGetMutableVectorBytes().clear();
+      vectorBytes_ = com.google.protobuf.ByteString.EMPTY;
+
       code_ = "";
 
       return this;
@@ -482,12 +363,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public cn.ac.iie.grpc.BytesResponse buildPartial() {
       cn.ac.iie.grpc.BytesResponse result = new cn.ac.iie.grpc.BytesResponse(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.vectorBytes_ = internalGetVectorBytes();
-      result.vectorBytes_.makeImmutable();
+      result.vectorBytes_ = vectorBytes_;
       result.code_ = code_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -536,8 +413,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(cn.ac.iie.grpc.BytesResponse other) {
       if (other == cn.ac.iie.grpc.BytesResponse.getDefaultInstance()) return this;
-      internalGetMutableVectorBytes().mergeFrom(
-          other.internalGetVectorBytes());
+      if (other.getVectorBytes() != com.google.protobuf.ByteString.EMPTY) {
+        setVectorBytes(other.getVectorBytes());
+      }
       if (!other.getCode().isEmpty()) {
         code_ = other.code_;
         onChanged();
@@ -570,128 +448,33 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private com.google.protobuf.MapField<
-        java.lang.String, com.google.protobuf.ByteString> vectorBytes_;
-    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
-    internalGetVectorBytes() {
-      if (vectorBytes_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            VectorBytesDefaultEntryHolder.defaultEntry);
-      }
+    private com.google.protobuf.ByteString vectorBytes_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <code>bytes vectorBytes = 1;</code>
+     */
+    public com.google.protobuf.ByteString getVectorBytes() {
       return vectorBytes_;
     }
-    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
-    internalGetMutableVectorBytes() {
-      onChanged();;
-      if (vectorBytes_ == null) {
-        vectorBytes_ = com.google.protobuf.MapField.newMapField(
-            VectorBytesDefaultEntryHolder.defaultEntry);
-      }
-      if (!vectorBytes_.isMutable()) {
-        vectorBytes_ = vectorBytes_.copy();
-      }
-      return vectorBytes_;
-    }
-
-    public int getVectorBytesCount() {
-      return internalGetVectorBytes().getMap().size();
+    /**
+     * <code>bytes vectorBytes = 1;</code>
+     */
+    public Builder setVectorBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      vectorBytes_ = value;
+      onChanged();
+      return this;
     }
     /**
-     * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
+     * <code>bytes vectorBytes = 1;</code>
      */
-
-    public boolean containsVectorBytes(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetVectorBytes().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getVectorBytesMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getVectorBytes() {
-      return getVectorBytesMap();
-    }
-    /**
-     * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-     */
-
-    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getVectorBytesMap() {
-      return internalGetVectorBytes().getMap();
-    }
-    /**
-     * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-     */
-
-    public com.google.protobuf.ByteString getVectorBytesOrDefault(
-        java.lang.String key,
-        com.google.protobuf.ByteString defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
-          internalGetVectorBytes().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-     */
-
-    public com.google.protobuf.ByteString getVectorBytesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
-          internalGetVectorBytes().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
     public Builder clearVectorBytes() {
-      internalGetMutableVectorBytes().getMutableMap()
-          .clear();
-      return this;
-    }
-    /**
-     * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-     */
-
-    public Builder removeVectorBytes(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableVectorBytes().getMutableMap()
-          .remove(key);
-      return this;
-    }
-    /**
-     * Use alternate mutation accessors instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.protobuf.ByteString>
-    getMutableVectorBytes() {
-      return internalGetMutableVectorBytes().getMutableMap();
-    }
-    /**
-     * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-     */
-    public Builder putVectorBytes(
-        java.lang.String key,
-        com.google.protobuf.ByteString value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableVectorBytes().getMutableMap()
-          .put(key, value);
-      return this;
-    }
-    /**
-     * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-     */
-
-    public Builder putAllVectorBytes(
-        java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
-      internalGetMutableVectorBytes().getMutableMap()
-          .putAll(values);
+      
+      vectorBytes_ = getDefaultInstance().getVectorBytes();
+      onChanged();
       return this;
     }
 

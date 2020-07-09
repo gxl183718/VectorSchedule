@@ -4,11 +4,6 @@
 package cn.ac.iie.grpc;
 
 /**
- * <pre>
- *2.服务端返回参数
- *返回数据格式
- * </pre>
- *
  * Protobuf type {@code MediaTask}
  */
 public  final class MediaTask extends
@@ -517,11 +512,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   *2.服务端返回参数
-   *返回数据格式
-   * </pre>
-   *
    * Protobuf type {@code MediaTask}
    */
   public static final class Builder extends

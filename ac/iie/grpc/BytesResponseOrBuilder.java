@@ -8,38 +8,9 @@ public interface BytesResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
+   * <code>bytes vectorBytes = 1;</code>
    */
-  int getVectorBytesCount();
-  /**
-   * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-   */
-  boolean containsVectorBytes(
-      java.lang.String key);
-  /**
-   * Use {@link #getVectorBytesMap()} instead.
-   */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.google.protobuf.ByteString>
-  getVectorBytes();
-  /**
-   * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-   */
-  java.util.Map<java.lang.String, com.google.protobuf.ByteString>
-  getVectorBytesMap();
-  /**
-   * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-   */
-
-  com.google.protobuf.ByteString getVectorBytesOrDefault(
-      java.lang.String key,
-      com.google.protobuf.ByteString defaultValue);
-  /**
-   * <code>map&lt;string, bytes&gt; vectorBytes = 1;</code>
-   */
-
-  com.google.protobuf.ByteString getVectorBytesOrThrow(
-      java.lang.String key);
+  com.google.protobuf.ByteString getVectorBytes();
 
   /**
    * <code>string code = 2;</code>

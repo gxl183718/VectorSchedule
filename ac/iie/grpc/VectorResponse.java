@@ -4,10 +4,6 @@
 package cn.ac.iie.grpc;
 
 /**
- * <pre>
- *key：任务id；value：数据
- * </pre>
- *
  * Protobuf type {@code VectorResponse}
  */
 public  final class VectorResponse extends
@@ -346,10 +342,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   *key：任务id；value：数据
-   * </pre>
-   *
    * Protobuf type {@code VectorResponse}
    */
   public static final class Builder extends
